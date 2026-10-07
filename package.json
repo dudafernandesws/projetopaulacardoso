@@ -1,0 +1,17 @@
+{
+  "name": "paulafoto",
+  "version": "0.2.1",
+  "private": true,
+  "description": "Site e CRM demonstrativo PaulaFoto",
+  "scripts": {
+    "predev": "node ferramentas/prepare-gallery.mjs",
+    "dev": "node ferramentas/serve-local.mjs",
+    "prepare:gallery": "node ferramentas/prepare-gallery.mjs",
+    "check": "npm run check:js && npm run check:specs",
+    "check:js": "node --check site/web/app.js && node --check site/web/public.js && node --check site/web/gallery.js && node --check site/web/editor.js && node --check ferramentas/prepare-gallery.mjs && node --check ferramentas/serve-local.mjs",
+    "check:specs": "python3 ferramentas/check_specs.py"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

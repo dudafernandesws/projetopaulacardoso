@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Galeria · Paula Cardoso Fotografia</title>
+  <meta name="description" content="Galeria de fotografias de Paula Cardoso.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='16' fill='%235c202c'/%3E%3Ccircle cx='16' cy='16' r='8' fill='none' stroke='%23fff9f3' stroke-width='2'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css?v=gallery-2">
+</head>
+<body data-page="gallery">
+  <header class="site-header">
+    <a class="brand" href="index.html">Paula Cardoso<span>FOTOGRAFIA</span></a>
+    <nav><a href="index.html#olhares">Portfólio</a><a href="galeria.html" aria-current="page">Galeria</a><a href="sobre-mim.html">Sobre mim</a><a href="index.html#experiencia">A experiência</a><a href="index.html#contato" class="outline">Vamos conversar</a></nav>
+  </header>
+  <main class="gallery-page">
+    <header class="gallery-heading">
+      <span class="eyebrow">PORTFÓLIO COMPLETO</span>
+      <h1>Galeria</h1>
+      <p>Histórias, presença e beleza em cada foto.</p>
+    </header>
+    <section class="gallery-masonry" id="galleryGrid" aria-label="Galeria de fotografias" aria-live="polite">
+      <p class="gallery-status">Carregando fotografias…</p>
+    </section>
+  </main>
+  <footer><a class="brand" href="index.html">Paula Cardoso<span>FOTOGRAFIA</span></a><p>Fotos com presença. Histórias com afeto.</p><span>Fotos femininas e profissionais</span></footer>
+
+  <dialog class="lightbox" id="lightbox" aria-label="Visualizador de fotografia">
+    <button class="lightbox-close" type="button" aria-label="Fechar visualizador">×</button>
+    <button class="lightbox-nav lightbox-prev" type="button" aria-label="Foto anterior">‹</button>
+    <figure>
+      <img id="lightboxImage" alt="">
+      <figcaption id="lightboxCounter"></figcaption>
+    </figure>
+    <button class="lightbox-nav lightbox-next" type="button" aria-label="Próxima foto">›</button>
+  </dialog>
+
+  <script src="gallery-data.js"></script>
+  <script src="gallery.js?v=gallery-1"></script>
+</body>
+</html>

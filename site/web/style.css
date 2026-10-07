@@ -17,3 +17,88 @@ html{scroll-padding-top:20px}input,select,textarea{font-size:16px;min-height:48p
 @media(max-width:359px){.site-header .brand{font-size:24px}.site-header{gap:10px}.site-header nav .outline{font-size:13px;padding:10px}.crm-main{padding:22px 12px}.metrics{grid-template-columns:1fr}.metrics>div{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:2px 10px}.metrics small{grid-column:1/-1}.metrics strong{margin:0}.contact{padding-left:6%;padding-right:6%}.demo-bar>span{font-size:10px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important}}
 @media(max-width:700px){.hero p br,.intro p br,.contact p br{display:revert}}
+.hero-note{display:none!important}
+
+/* Real-work portfolio: editorial rhythm without cropping the supplied frames. */
+.hero-photo{background-image:url('assets/portfolio-consultora-retrato-720.jpg');aspect-ratio:2/3;background-position:center;background-size:cover}
+.portfolio-grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));align-items:start;gap:64px 28px;margin:0 7% 100px}
+.portfolio-grid .portfolio-card{margin:0;padding:0;grid-column:span 4}
+.portfolio-grid .portfolio-card.lifted{padding-top:90px}
+.portfolio-grid .portfolio-card.landscape{grid-column:span 6}
+.portfolio-grid .portfolio-card.feature{grid-column:span 7}
+.portfolio-grid .portfolio-card.feature + .portfolio-card{grid-column:span 5;padding-top:80px}
+.portfolio-grid .portfolio-card.photographer{grid-column:span 7;justify-self:end;width:100%}
+.portfolio-grid img{display:block;width:100%;height:auto;object-fit:contain;background:#eee8e1}
+.portfolio-grid .image-frame{width:100%}
+.portfolio-grid .portrait-crop{grid-column:span 4}
+.portfolio-grid .portrait-crop .image-frame{aspect-ratio:2/3;overflow:hidden;background:#eee8e1}
+.portfolio-grid .portrait-crop img{height:100%;object-fit:cover}
+.portfolio-grid .crop-right img{object-position:66% center}
+.portfolio-grid .crop-center img{object-position:48% center}
+.portfolio-grid .crop-left img{object-position:34% center}
+.portfolio-grid figcaption{display:flex;justify-content:space-between;align-items:baseline;gap:18px;margin-top:16px;border-top:1px solid var(--line);padding-top:12px;font:24px 'Playfair Display',serif}
+.portfolio-grid figcaption>span{padding:0;color:var(--ink);font:inherit}
+.portfolio-grid figcaption small{margin:0;font:10px 'DM Sans',sans-serif;letter-spacing:2px;color:var(--wine);text-align:right}
+@media(min-width:1100px){.hero-photo{background-image:url('assets/portfolio-consultora-retrato-1200.jpg')}}
+@media(max-width:900px){.portfolio-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:44px 20px}.portfolio-grid .portfolio-card,.portfolio-grid .portfolio-card.landscape,.portfolio-grid .portfolio-card.feature,.portfolio-grid .portfolio-card.feature + .portfolio-card,.portfolio-grid .portfolio-card.photographer{grid-column:span 1;padding-top:0;width:100%}.portfolio-grid .portfolio-card:nth-child(2){padding-top:55px}.portfolio-grid .portfolio-card.feature{grid-column:1/-1}.portfolio-grid figcaption{font-size:21px}}
+@media(max-width:560px){.portfolio-grid{grid-template-columns:1fr;gap:42px;margin:0 6% 64px}.portfolio-grid .portfolio-card,.portfolio-grid .portfolio-card:nth-child(2),.portfolio-grid .portfolio-card.landscape,.portfolio-grid .portfolio-card.feature,.portfolio-grid .portfolio-card.feature + .portfolio-card,.portfolio-grid .portfolio-card.photographer{grid-column:1;padding-top:0}.portfolio-grid .portfolio-card.portrait:nth-child(even){width:82%;justify-self:end}.portfolio-grid figcaption{font-size:21px}.portfolio-grid figcaption small{max-width:45%;letter-spacing:1.5px}.intro p br{display:none}}
+
+/* Separate administrative access. */
+.admin-login{min-height:100dvh;display:grid;place-items:center;padding:24px;background:linear-gradient(135deg,#f7f2ec,#eaded6)}
+.admin-login form{width:min(100%,460px);background:#fffdfa;border:1px solid var(--line);padding:clamp(28px,6vw,52px);box-shadow:0 24px 70px #38211f18}
+.admin-login .brand{display:inline-block;margin-bottom:42px}
+.admin-login h1{font-size:clamp(2.2rem,7vw,3.4rem);letter-spacing:-.04em;margin:16px 0}
+.admin-login p{color:var(--muted);margin-bottom:28px}
+.admin-login .button{width:100%}
+.admin-login small{display:block;color:var(--muted);margin-top:22px}
+.admin-login .access-error{color:#a33a38;min-height:26px;margin:10px 0 0}
+body[data-page="public"] .demo-bar,body[data-page="public"] .edit-launch,body[data-page="public"] .editor-panel{display:none!important}
+
+/* Tighter hero alignment keeps the brand and opening message visually connected. */
+.hero{align-items:start}
+.hero-copy{padding-top:38px}
+@media(max-width:900px){.hero-copy{padding-top:28px}}
+@media(max-width:700px){.hero-copy{padding-top:10px}}
+
+/* Standalone gallery. */
+nav a[aria-current="page"]{color:var(--wine);border-bottom:1px solid var(--wine)}
+.gallery-page{padding:35px 7% 100px}
+.gallery-heading{max-width:720px;margin:0 auto 58px;text-align:center}
+.gallery-heading h1{font-size:clamp(3.5rem,8vw,7rem);margin:12px 0 18px}
+.gallery-heading p{color:var(--muted);font-size:17px}
+.gallery-masonry{columns:3;column-gap:24px}
+.gallery-item{display:block;width:100%;margin:0 0 24px;padding:0;border:0;background:var(--soft);break-inside:avoid;overflow:hidden;cursor:zoom-in}
+.gallery-item img{display:block;width:100%;height:auto;transition:transform .35s ease,opacity .35s ease}
+.gallery-item:hover img{transform:scale(1.015);opacity:.94}
+.gallery-status{column-span:all;text-align:center;color:var(--muted)}
+.lightbox{width:100vw;max-width:none;height:100dvh;max-height:none;margin:0;padding:24px 74px;border:0;border-radius:0;background:#171313f5;color:white;overflow:hidden}
+.lightbox::backdrop{background:#171313f5}
+.lightbox figure{width:100%;height:100%;margin:0;display:grid;grid-template-rows:minmax(0,1fr) auto;place-items:center;gap:12px}
+.lightbox img{display:block;max-width:100%;max-height:calc(100dvh - 86px);object-fit:contain}
+.lightbox figcaption{font-size:12px;letter-spacing:2px;color:#ddd4ce}
+.lightbox-close,.lightbox-nav{position:fixed;z-index:2;border:0;background:#2d2626b8;color:white;display:grid;place-items:center;cursor:pointer}
+.lightbox-close{top:18px;right:20px;width:48px;height:48px;border-radius:50%;font-size:32px}
+.lightbox-nav{top:50%;width:50px;height:70px;transform:translateY(-50%);font:42px/1 'Playfair Display',serif}
+.lightbox-prev{left:14px}.lightbox-next{right:14px}
+@media(max-width:900px){.gallery-page{padding-top:20px}.gallery-masonry{columns:2}.gallery-heading{margin-bottom:42px}}
+@media(max-width:700px){body[data-page="public"] .site-header nav a[href="galeria.html"],body[data-page="gallery"] .site-header nav a[aria-current="page"]{display:block}body[data-page="gallery"] .site-header nav a:not([aria-current="page"]):not(.outline){display:none}.gallery-page{padding:18px 6% 70px}.gallery-heading{margin-bottom:34px}.gallery-heading h1{font-size:clamp(3rem,18vw,5rem)}.gallery-masonry{columns:1;column-gap:0}.gallery-item{margin-bottom:18px}.lightbox{padding:64px 14px 70px}.lightbox img{max-height:calc(100dvh - 150px)}.lightbox-nav{top:auto;bottom:12px;width:54px;height:48px;transform:none}.lightbox-prev{left:calc(50% - 66px)}.lightbox-next{right:calc(50% - 66px)}.lightbox-close{top:12px;right:12px}}
+
+/* About Paula. */
+nav{gap:clamp(14px,2.5vw,40px)}
+.about-page{padding-bottom:95px}
+.about-hero{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1fr);align-items:center;gap:clamp(48px,8vw,120px);margin:30px 7% 105px}
+.about-intro{max-width:620px}
+.about-intro h1{font-size:clamp(4rem,8vw,7rem);margin:16px 0 28px}
+.about-intro p,.about-text p{color:var(--muted);font-size:16px;line-height:1.85}
+.about-intro .about-lead{color:var(--ink);font:clamp(1.35rem,2.2vw,1.75rem)/1.45 'Playfair Display',serif;margin-bottom:28px}
+.about-portrait{margin:0;justify-self:end;width:min(100%,600px)}
+.about-portrait img{display:block;width:100%;height:auto;border-radius:3px 110px 3px 3px}
+.about-story,.about-work{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1fr);gap:clamp(45px,8vw,120px);padding:85px 10%}
+.about-story{background:var(--soft)}
+.about-story h2,.about-work h2{font-size:clamp(2.5rem,5vw,4.5rem);margin:18px 0}
+.about-text{max-width:720px}
+.about-text p:last-of-type{margin-bottom:0}
+.about-work{padding-top:105px;padding-bottom:15px}
+.about-work .button{margin-top:30px}
+@media(max-width:900px){.about-hero{grid-template-columns:1fr;gap:42px;margin-top:25px}.about-intro{max-width:740px}.about-portrait{justify-self:center;width:min(100%,620px)}.about-story,.about-work{grid-template-columns:1fr;gap:22px;padding:65px 8%}.about-work{padding-top:75px}}
+@media(max-width:700px){body[data-page="public"] .site-header nav a[href="sobre-mim.html"],body[data-page="gallery"] .site-header nav a[href="sobre-mim.html"],body[data-page="about"] .site-header nav a[aria-current="page"],body[data-page="about"] .site-header nav a[href="galeria.html"]{display:block!important}.about-page{padding-bottom:65px}.about-hero{margin:20px 6% 65px;gap:34px}.about-intro h1{font-size:clamp(3.5rem,18vw,5rem);margin-bottom:20px}.about-intro p,.about-text p{font-size:15px;line-height:1.75}.about-portrait img{border-radius:3px 70px 3px 3px}.about-story,.about-work{padding:55px 7%;gap:15px}.about-work{padding-top:65px;padding-bottom:0}.about-work .button{width:100%;text-align:center}}

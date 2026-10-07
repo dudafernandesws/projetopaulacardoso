@@ -1,4 +1,43 @@
-*.png
-clara-luz-editavel.html
-user-edits.json
-dist/assets/*.png
+# Dependências
+node_modules/
+
+# Variáveis de ambiente e credenciais
+.env
+.env.*
+!.env.example
+.npmrc
+*.key
+*.pem
+*.p12
+*.pfx
+credentials*.json
+service-account*.json
+secrets/
+
+# Dados locais e conteúdo privado
+dados/
+imagens/originais-hd/
+
+# Arquivos gerados e temporários
+dist/
+coverage/
+.cache/
+.tmp/
+tmp/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Capturas e arquivos gerados pelo projeto
+imagens/previews/
+site/web/assets/*.png
+site/web/.vercel/
+arquivo/clara-luz-editavel.html
+
+# Sistema operacional e editores
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

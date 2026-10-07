@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Área administrativa · Paula Cardoso</title>
+  <meta name="robots" content="noindex,nofollow">
+  <link rel="stylesheet" href="style.css?v=admin-1">
+</head>
+<body data-page="admin">
+  <main class="admin-login" id="adminLogin">
+    <form id="adminAccessForm">
+      <a class="brand" href="index.html">Paula Cardoso<span>FOTOGRAFIA</span></a>
+      <span class="eyebrow">ÁREA ADMINISTRATIVA</span>
+      <h1>Gestão de relacionamentos</h1>
+      <p>Acesso reservado para administrar contatos, retornos e oportunidades.</p>
+      <label>Senha de demonstração<input id="adminPassword" type="password" autocomplete="current-password" required></label>
+      <button class="button">Entrar no painel</button>
+      <p class="access-error" id="accessError" role="alert"></p>
+      <small>Ambiente demonstrativo. Os dados ficam somente neste navegador.</small>
+    </form>
+  </main>
+  <section id="crm" hidden></section>
+  <dialog id="leadDialog"></dialog>
+  <div class="toast" id="toast" role="status" hidden></div>
+  <script>
+    const accessForm=document.getElementById('adminAccessForm');
+    accessForm.addEventListener('submit',event=>{
+      event.preventDefault();
+      if(document.getElementById('adminPassword').value!=='PAULA2026'){
+        document.getElementById('accessError').textContent='Senha incorreta.';
+        return;
+      }
+      document.getElementById('adminLogin').hidden=true;
+      const script=document.createElement('script');
+      script.src='app.js?v=admin-1';
+      script.onload=()=>{document.getElementById('crm').hidden=false};
+      document.body.append(script);
+    });
+  </script>
+</body>
+</html>
